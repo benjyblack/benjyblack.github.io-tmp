@@ -109,7 +109,7 @@ int KEY_SPECIAL2 = 86; //V
 int KEY_SPECIAL3 = 66; //B
 int KEY_SPECIAL4 = 68; //D
 int KEY_KILLALL = 8; //backspace
-int KEY_PHATLOOT = 61; 
+int KEY_PHATLOOT = 80; 
 int KEY_POWER1 = 89; //Y
 int KEY_POWER2 = 85; //U
 int KEY_POWER3 = 73; //I
@@ -203,11 +203,11 @@ class ParticleList extends ArrayList
   void tick()
   {
     Iterator i = this.iterator();
-    while(i.hasNext())
+    for (int i = 0; i< this.size(); i++)
     {
-      Particle p = (Particle) i.next();
+      Particle p = this.get(i);
       p.tick();
-      if(p.life <= 0) i.remove();
+      if(p.life <= 0) this.remove(i);
     }
   }
   void draw()
@@ -432,14 +432,16 @@ class Screen
       }
     }
 
-    Iterator it = sprites.iterator();
     {
       boolean hadHostiles = false;
       boolean hadFriendly = false;
       boolean hasHostiles = false;
-      while(it.hasNext())
+
+      int numHostiles = 0;
+
+      for(int i = 0; i < sprites.size(); i++)
       {
-        Sprite c = (Sprite) it.next();
+        Sprite c = sprites.get(i);
         if(c.hostile) hadHostiles = true;
         else if(!c.inanimate && c!=player) hadFriendly = true;
         if(c.hp <= 0 && c.stun_timer == 0 && c.max_hp > 0 && !c.airborne)
@@ -449,15 +451,25 @@ class Screen
             decoyPresent = false;
           if(!(c instanceof Loot))
             deathSound.play();
-          it.remove();
+          console.log("Removing!");
+          sprites.remove(i);  
           if(!c.hostile && !c.inanimate) 
           {
             killedFriendly = true;
           }
         }
-        else if(c.hostile) hasHostiles = true;
+        else if(c.hostile)  numHostiles++;
       }
-      if(!hasHostiles) cleared = true;
+
+      cleared = true;
+      for (int i =0; i < sprites.size(); i++)
+      {
+        if (sprites.get(i).hostile) {
+          cleared = false;
+          break;
+        }
+      }
+      // if(numHostiles <= 0) cleared = true;
     }
     sprites.addAll(loot_drop);
     loot_drop.clear();
@@ -2103,8 +2115,8 @@ void zonePlayer()
         c.name_timer = NAME_TIME;
       }
     }
-            textParticles.clear();
-        smokeParticles.clear();
+      textParticles.clear();
+      smokeParticles.clear();
   }
 }
 
@@ -2640,6 +2652,7 @@ void down(int theKey)
  }
   if(theKey == KEY_ATTACK) player.attack_cue = true;
   if(theKey == KEY_PHATLOOT) {
+    console.log("CHEATER!");
     cheated = true; 
     hasDecoy = hasSludge = hasOil = hasBite = true;
     bite = new Bite();
