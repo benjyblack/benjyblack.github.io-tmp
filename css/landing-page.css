@@ -47,6 +47,10 @@ body, h1, h2, h3, h4, h5, h6 {
 	background: url(../img/projects-header.jpg) no-repeat center center;
 }
 
+.travel-header {
+	background: url(../img/travel-header.jpg) no-repeat center center;
+}
+
 .intro-message {
 	position: relative;
 	padding-top: 20%;
