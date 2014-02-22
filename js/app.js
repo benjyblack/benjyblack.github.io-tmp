@@ -1,6 +1,6 @@
 'use strict'
 
-var personalApp = angular.module('personalApp', ['ngRoute']);
+var personalApp = angular.module('personalApp', ['ngRoute', 'personalAppControllers', 'personalAppServices']);
 
 personalApp.config(['$routeProvider',
     function($routeProvider) {
