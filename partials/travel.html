@@ -1,4 +1,4 @@
-<div ng-controller="TravelCtrl">
+<div ng-controller="TravelCtrl" class="view-container">
     <div class="intro-header travel-header">
 
         <div class="container">
@@ -8,6 +8,11 @@
                     <div class="intro-message">
                         <h1>Travel</h1>
                         <hr class="intro-divider">
+                        <div class="page-scroll">
+                            <a href="" scroll-to="#page-content" container="body" duration="1000" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down animated"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -19,5 +24,25 @@
     </div>
     <!-- /.intro-header -->
 
-    <div id="map-canvas"></div>
+    <div class="view-container" id="page-content">
+        <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="clearfix"></div>
+                <h2 class="section-heading centered-text">Putrefied Pugilist Revenge</h2>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, corporis, velit dolor libero cum iusto autem quidem eum expedita enim quisquam ipsa quis explicabo labore neque officia distinctio atque necessitatibus.</p>
+            </div>
+        </div>
+
+        <div class="map-container container">
+            <div id="map-canvas"></div>
+
+            <i class="map-top"></i>
+            <i class="map-right"></i>
+            <i class="map-bottom"></i>
+            <i class="map-left"></i>    
+        </div>
+    </div>
 </div>

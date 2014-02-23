@@ -1,6 +1,6 @@
 'use strict'
 
-var personalApp = angular.module('personalApp', ['ngRoute', 'personalAppControllers', 'personalAppServices']);
+var personalApp = angular.module('personalApp', ['ngRoute', 'scrollto', 'personalAppControllers', 'personalAppServices']);
 
 personalApp.config(['$routeProvider',
     function($routeProvider) {
@@ -16,10 +16,6 @@ personalApp.config(['$routeProvider',
             when('/travel', {
             title: 'Travel',
             templateUrl: 'partials/travel.html'
-        }).
-            when('/blog', {
-            title: 'Blog',
-            templateUrl: 'partials/blog.html'
         }).
         otherwise({
             redirectTo: '/home'

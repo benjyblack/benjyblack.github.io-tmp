@@ -38,30 +38,29 @@ personalAppServices.factory('GoogleMaps', function() {
 	var map_id  = '#map-canvas';
 	var lat     = 46.87916;
 	var lng     = -3.32910;
-	var zoom    = 4;
+	var zoom    = 2;
 
-	var map     = new google.maps.Map($(map_id)[0], {
-		zoom : zoom,
-	    center : new google.maps.LatLng(lat, lng),
-	    mapTypeId : google.maps.MapTypeId.ROADMAP
-	});
+	return {
+		init: function() {
+			
+			var map     = new google.maps.Map($(map_id)[0], {
+				zoom : zoom,
+			    center : new google.maps.LatLng(lat, lng),
+			    mapTypeId : google.maps.MapTypeId.ROADMAP,
+			    styles: [{"featureType":"road","elementType":"labels","stylers":[{"visibility":"simplified"},{"lightness":20}]},{"featureType":"administrative.land_parcel","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"labels","stylers":[{"visibility":"simplified"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"simplified"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"hue":"#a1cdfc"},{"saturation":30},{"lightness":49}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"hue":"#f49935"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"hue":"#fad959"}]}]
+			});
 
-	// Add each location to map
-	angular.forEach(locations, function(value) {
-		var marker = new google.maps.Marker({
-			title: value.title,
-			position: new google.maps.LatLng(value.position.lat, value.position.lng),
-			map: map
-		});
+			// Add each location to map
+			angular.forEach(locations, function(value) {
+				var marker = new google.maps.Marker({
+					title: value.title,
+					position: new google.maps.LatLng(value.position.lat, value.position.lng),
+					icon: '../img/footprint.png',
+					map: map
+				});
+			});
 
-		// var infowindow = new google.maps.InfoWindow({
-		// 	content: marker.title
-		// });
-
-		// google.maps.event.addListener(marker, 'click', function() {
-		// 	infowindow.open(map, marker);
-		// });
-	});
-
-	return map;
+			return map;
+		}
+	};
 });

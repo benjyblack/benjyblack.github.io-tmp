@@ -11,19 +11,7 @@ body, h1, h2, h3, h4, h5, h6 {
 	font-size: 18px;
 	font-weight: 400;
 }
-/*
-.full-page-image {
-	display: table;
-	height: 100%;
-	width: 100%;
-	position: relative;
-	background: url(../img/home-header.jpg) no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-*/
+
 .full-page-image div.game-container {
 	display: table-cell;
 	vertical-align: middle;
@@ -54,11 +42,15 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 .travel-header {
-	background: url(../img/travel-header.jpg) no-repeat center center;
+	background: url(../img/travel-header-temp2.jpg) no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+}
+
+.game-header {
+	height:80%;
 }
 
 .intro-message {
@@ -247,7 +239,133 @@ p.copyright {
 	margin-left: auto;
 }
 
+.map-container {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+
+    padding-left: 0px;
+    padding-right:0px;
+}
+
+.map-container i {
+    position: absolute;
+    display: block;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.map-top {
+    top: -5px;
+    left: 0;
+    right: 0;
+    height: 5px;
+}
+.map-right {
+    right: -5px;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+}
+.map-bottom {
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 5px;
+}
+.map-left {
+    left: -5px;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+}
+
 #map-canvas {
-	height:600px;
-	width:100%;
+	height:inherit;
+	width:inherit;
+}
+
+.btn {
+	text-transform: uppercase;
+	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+.btn-circle {
+	width: 70px;
+	height: 70px;
+	margin-top: 15px;
+	padding: 7px 16px;
+	border: 2px solid #fff;
+	border-radius: 35px;
+	font-size: 40px;
+	color: #fff;
+	background: 0 0;
+	-webkit-transition: background .3s ease-in-out;
+	-moz-transition: background .3s ease-in-out;
+	transition: background .3s ease-in-out;
+}
+
+.btn-circle:hover, .btn-circle:focus {
+	outline: 0;
+	color: #fff;
+	background: rgba(255,255,255,.1);
+}
+
+.page-scroll .btn-circle:hover i.animated {
+	-webkit-animation-name: pulse;
+	-moz-animation-name: pulse;
+	-webkit-animation-duration: 1.5s;
+	-moz-animation-duration: 1.5s;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-timing-function: linear;
+}
+
+.page-scroll .btn-circle i.animated {
+	-webkit-transition-property: -webkit-transform;
+	-webkit-transition-duration: 1s;
+	-moz-transition-property: -moz-transform;
+	-moz-transition-duration: 1s;
+}
+
+@-webkit-keyframes pulse {    
+    0 {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-moz-keyframes pulse {    
+    0 {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -moz-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.centered-text {
+	text-align:center;
 }

@@ -25,9 +25,16 @@
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 
+    <!-- JavaScript -->
+    <script src="vendor/jquery-1.10.2.js"></script>
+    <script src="vendor/bootstrap.js"></script>
+
     <!-- Angular -->
     <script type="text/javascript" src="vendor/angular.min.js"></script>
     <script type="text/javascript" src="vendor/angular-route.min.js"></script>
+
+    <!-- Third-party Angular -->
+    <script type="text/javascript" src="vendor/angular-scrollto.min.js"></script>
 
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
@@ -55,7 +62,6 @@
                     <li><a href="#home">Home</a> </li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#travel">Travel</a></li>
-                    <li><a href="#blog">Blog</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -66,10 +72,7 @@
     <div class="view-container">
         <div ng-view class="view-frame"></div>
     </div>
-        
-    <!-- JavaScript -->
-    <script src="vendor/jquery-1.10.2.js"></script>
-    <script src="vendor/bootstrap.js"></script>
+
 </body>
 
 </html>
