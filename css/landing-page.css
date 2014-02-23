@@ -1,6 +1,5 @@
 body, html {
 	height: 100%;
-	width: 100%;
 }
 
 body, h1, h2, h3, h4, h5, h6 {
@@ -12,7 +11,7 @@ body, h1, h2, h3, h4, h5, h6 {
 	font-size: 18px;
 	font-weight: 400;
 }
-
+/*
 .full-page-image {
 	display: table;
 	height: 100%;
@@ -24,7 +23,7 @@ body, h1, h2, h3, h4, h5, h6 {
 	-o-background-size: cover;
 	background-size: cover;
 }
-
+*/
 .full-page-image div.game-container {
 	display: table-cell;
 	vertical-align: middle;
@@ -33,22 +32,33 @@ body, h1, h2, h3, h4, h5, h6 {
 
 .intro-header {
 	padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-	padding-bottom: 50px;
 	color: #f8f8f8;
-	background-size: cover;
 	text-align: center;
+	height:100%;
 }
 
 .home-header {
-	background: url(../img/home-header.jpg) no-repeat center center;
+	background: url(../img/home-header.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 .projects-header {
 	background: url(../img/projects-header.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 .travel-header {
 	background: url(../img/travel-header.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 .intro-message {
@@ -177,6 +187,10 @@ footer {
 }
 
 p.photo-credit {
+	position: absolute;
+	bottom:0px;
+	right:0px;
+
 	text-align:right;
 	padding-right:25px;
 	color: white;
