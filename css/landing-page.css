@@ -1,5 +1,6 @@
 body, html {
 	height: 100%;
+	background-color: #f8f8f8;
 }
 
 body, h1, h2, h3, h4, h5, h6 {
@@ -106,7 +107,6 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 .content-section-a {
-	background-color: #f8f8f8;
 	padding: 50px 0;
 }
 
@@ -114,6 +114,7 @@ body, h1, h2, h3, h4, h5, h6 {
 	border-top: 1px solid #e7e7e7;
 	border-bottom: 1px solid #e7e7e7;
 	padding: 50px 0;
+	background-color: #fff;
 }
 
 .section-heading {
@@ -211,6 +212,7 @@ p.copyright {
 
 .navbar-default {
 	background-color: #2C2C2C;
+	border-color: #2C2C2C;
 }
 
 .navbar-default .navbar-brand {
@@ -246,6 +248,8 @@ p.copyright {
 
     padding-left: 0px;
     padding-right:0px;
+
+    margin-top:20px;
 }
 
 .map-container i {
