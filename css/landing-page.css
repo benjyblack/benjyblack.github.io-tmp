@@ -373,3 +373,7 @@ p.copyright {
 .centered-text {
 	text-align:center;
 }
+
+.italic {
+	font-style:italic;
+}
